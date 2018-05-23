@@ -15,7 +15,7 @@ var randomColor = Math.floor(Math.random() * 16777215).toString(16);
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}! There are no apparent major bugs.`);
     client.user.setStatus("online");
-    client.user.setActivity('ibot.space | !help', { type: 'PLAYING' });
+    client.user.setActivity('Nova Bot | Prefix: -', { type: 'PLAYING' });
 });
 
 
@@ -43,7 +43,7 @@ client.on('message', message => {
    var guildid = message.guild.id
     db.fetch(`guildPrefix_${guildid}`).then(i => {
 
-        let prefix = i || '!'
+        let prefix = i || '-'
 
         let msg = message.content.toLowerCase();
         let args = message.content.slice(prefix.length).trim().split(" ");
